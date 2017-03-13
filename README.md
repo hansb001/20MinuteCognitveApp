@@ -100,7 +100,7 @@ To save and deploy the flow you just build to Bluemix, click on the **deploy** b
 
 Next step is to display the results of the twitter analysis. 
 
-## Step four: add dashboard nodes 
+## Step four: Add dashboard nodes 
 
 First check if if the dashboard nodes are available. To do so, scroll down in the nodes palette, on the left side of the screen. If there is a section called **dashboard** you can continue to the step five. Otherwise follow the follwoing to install the dashboard nodes.
 
@@ -110,7 +110,7 @@ First check if if the dashboard nodes are available. To do so, scroll down in th
 
 When the installation finished you should see the nodes in the nodes palette
 
-## Step five Build the dashboard
+## Step five: Build the dashboard
 
 on the dashboard we will show the tweet and the highest tone score
 
@@ -128,7 +128,7 @@ To see the results use your URL with ```/ui``` for instance: https://Watsonlab.m
 Then you are finished and have your cognitive application running including the dashboard! 
 
 
- ## Step 6 (optional) Extend your application
+ ## Step 6 (optional): Extend your application ##
 
 If you got time you can extend the application. In the sample flow below, I have added a filter, to only analyze tweets in English, and a delay node to anlayze less messages per minute.
 
