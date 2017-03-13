@@ -1,28 +1,29 @@
 
 # Interconnect - Build a cognitive app in 20 minutes
 
-## Build a cognitive app in 20 minutes
+## Introduction
 
-In this short workshop I will show you how easy it is to build a (simple) starter application form where you can extend and enhance.
-This Application makes use of Node-RED, which is a visual tool where you can wire things together, with limited coding.
+In this short workshop we will experience how easy it is to build a (simple) cognitive application. After finishing this lab you can extend and enhance this application in any way you like. 
 
-We use the NODE-RED in boilerplate in Bluemix which consists of the Node-RED application (node.js) and a Cloudant database.
+This Application makes use of [Node-RED](http://nodered.org), which is a visual tool to wire things together, with just limited coding. 
 
-We will build a cognitive app, with the Watson tome analyser service
+We use the NODE-RED boilerplate in [Bluemix](http://Bluemix.net) which consists of the Node-RED application (node.js) and a Cloudant database. 
 
-With Watson Tone Analyser you can analyze the tone of voice of written text. The source of our text will be Twitter. 
+We will build an cognitive app, with the [Watson tone analyzer](https://www.ibm.com/watson/developercloud/tone-analyzer.html) service 
 
-We will display the output on a dashboard.
+With Watson Tone Analyzer you can analyze the tone of voice of written text. The source of our text will be Twitter.  
 
-As already mentioned this is just a starter application to show you how easy it is to use Node-RED and the Watson API’s. When you have this application running you can extend the application with more functionality if needed.
+At last we will display the output on a dashboard. 
+
+As already mentioned this is just a starter application to show you how easy it is to use Node-RED and the Watson API’s. When you have this application running you can extend the application with more functionality if needed. 
 
 ## Step one: Deploy Node-RED on Bluemix
 
 When you are logged in to Bluemix:
-click to 'Catalog'  
-click on “Apps”
-click on “Boilerplates”
-click on the 'Node-RED starter'. 
+1. click to 'Catalog'  
+2. click on “Apps”
+3. click on “Boilerplates”
+4. click on the 'Node-RED starter'. 
 On the next screen you must give the application unique name, which wil be part of the URL to the application. 
 Then click 'Create'. 
 Right now the Node-RED application is being created and deployed. This will take a few minutes. 
