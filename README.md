@@ -20,12 +20,14 @@ As already mentioned this is just a starter application to show you how easy it 
 ## Step one: Deploy Node-RED on Bluemix
 
 When you are logged in to Bluemix:
-1. click to 'Catalog'  
-2. click on “Apps”
-3. click on “Boilerplates”
-4. click on the 'Node-RED starter'. 
-On the next screen you must give the application unique name, which wil be part of the URL to the application. 
-Then click 'Create'. 
+
+1. click to 'Catalog' 
+1. click on “Apps”
+1. click on “Boilerplates”
+1. click on the 'Node-RED starter'. 
+ On the next screen you must give the application unique name, which wil be part of the URL to the application. 
+1. Then click 'Create'. 
+
 Right now the Node-RED application is being created and deployed. This will take a few minutes. 
 
 ## Step two Add Watson Tone Analyzer service
