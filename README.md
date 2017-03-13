@@ -128,7 +128,7 @@ To see the results use your URL with ```/ui``` for instance: https://Watsonlab.m
 Then you are finished and have your cognitive application running including the dashboard! 
 
 
- ## Step 6 (optional): Extend your application ##
+## Step 6 (optional): Extend your application
 
 If you got time you can extend the application. In the sample flow below, I have added a filter, to only analyze tweets in English, and a delay node to anlayze less messages per minute.
 
