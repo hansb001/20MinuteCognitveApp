@@ -1,32 +1,34 @@
-# 20MinuteCognitveApp
-Interconnect - Build a cognitive app in 20 minutes
 
-Build a cognitive app in 20 minutes
+# Interconnect - Build a cognitive app in 20 minutes
+
+## Build a cognitive app in 20 minutes
 
 In this short workshop I will show you how easy it is to build a (simple) starter application form where you can extend and enhance.
-This Application makes use of Node-RED, which is a visual tool wire you wire things together, with just limited coding.
+This Application makes use of Node-RED, which is a visual tool where you can wire things together, with limited coding.
 
-We use the NODE-RED boilerplate which consists of the Node-RED application (node.js) and a Cloudant database.
+We use the NODE-RED in boilerplate in Bluemix which consists of the Node-RED application (node.js) and a Cloudant database.
 
 We will build a cognitive app, with the Watson tome analyser service
-With Watson Tone Analyser you can analyse the tone of voice of written text. The source of our text will be Twitter. 
+
+With Watson Tone Analyser you can analyze the tone of voice of written text. The source of our text will be Twitter. 
 
 We will display the output on a dashboard.
 
 As already mentioned this is just a starter application to show you how easy it is to use Node-RED and the Watson API’s. When you have this application running you can extend the application with more functionality if needed.
 
-Step one
-Deploy Node-RED on Bluemix
+## Step one: Deploy Node-RED on Bluemix
+
 When you are logged in to Bluemix:
- click to 'Catalog'  
+click to 'Catalog'  
 click on “Apps”
 click on “Boilerplates”
 click on the 'Node-RED starter'. 
 On the next screen you must give the application unique name, which wil be part of the URL to the application. 
 Then click 'Create'. 
 Right now the Node-RED application is being created and deployed. This will take a few minutes. 
-Step two 
-Add Watson Tone Analyzer service
+
+## Step two Add Watson Tone Analyzer service
+
 When the application is started, click on connections in the left menu
 Click connect new
 Click on Watson ( on the left)
@@ -36,8 +38,8 @@ Now the tone analyser service is beingadde to the application so that we can use
 Click restage
 The application will be restarted
 When finished click on the vie app which opens up your Node-RED application.
-Step 3 
-Build your application
+
+## Step 3 Build your application
 Now it is time to build your application by dragging dropping nodes to the canvas.
 Every node has it’s own functionality and parameters.
 We start with a twitter in node, drag and drop it to the canvas
@@ -48,7 +50,7 @@ Add 2 function nodes
 Wire the first to the tone analyser node and wire the second tot the first function node
 Because tone analyser will give five different tones and we use only one. This first function node will give the tone with the highest score. 
 Give the first node the name: Find top tone score” and add this code to the first node:
-
+...
 if(msg.response.document_tone) {
  
  // Get the Social Summary tones.
@@ -76,7 +78,7 @@ msg.payload = {
 };
 
 return msg;
-
+...
 the application is finished now.
 Click on deploy to store this flow.
 Now wil display the results on a dashboard
