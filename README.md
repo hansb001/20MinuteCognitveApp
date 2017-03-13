@@ -19,6 +19,8 @@ As already mentioned this is just a starter application to show you how easy it 
 
 ## Step one: Deploy Node-RED on Bluemix
 
+You need a Bluemix account, if you don't have one yet, follow the steps to can create an account [here](http://Bluemix.net). 
+
 When you are logged in to Bluemix:
 
 1. click to 'Catalog' 
@@ -30,19 +32,22 @@ When you are logged in to Bluemix:
 
 Right now the Node-RED application is being created and deployed. This will take a few minutes. 
 
-## Step two Add Watson Tone Analyzer service
+## Step two: Add Watson Tone Analyzer service
 
 When the application is started, click on connections in the left menu
-Click connect new
-Click on Watson ( on the left)
-Click tone analyser
-Click create
-Now the tone analyser service is beingadde to the application so that we can use it in Node-RED.
-Click restage
-The application will be restarted
-When finished click on the vie app which opens up your Node-RED application.
 
-## Step 3 Build your application
+2. Click connect new
+2. Click on Watson (on the left)
+2. Click tone analyzer
+2. Click create
+ Now the tone analyser service is being added to the application, so that we can use it in Node-RED.
+2. Click restage
+ The application will be restarted
+
+When finished click on the **View app** which opens up your Node-RED application.
+
+## Step three: Build your application
+
 Now it is time to build your application by dragging dropping nodes to the canvas.
 Every node has it’s own functionality and parameters.
 We start with a twitter in node, drag and drop it to the canvas
