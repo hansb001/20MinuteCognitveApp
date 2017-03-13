@@ -17,6 +17,8 @@ At last we will display the output on a dashboard.
 
 As already mentioned this is just a starter application to show you how easy it is to use Node-RED and the Watson API’s. When you have this application running you can extend the application with more functionality if needed. 
 
+In step six you will find the complete flow of this lab.
+
 ## Step one: Deploy Node-RED on Bluemix
 
 You need a Bluemix account, if you don't have one yet, follow the steps to can create an account [here](http://Bluemix.net). 
