@@ -50,14 +50,15 @@ When finished click on the **View app** which opens up your Node-RED application
 
 Now it is time to build your application by dragging dropping nodes to the canvas.
 Every node has it’s own functionality and parameters.
-We start with a twitter in node, drag and drop it to the canvas
-Double click the twitter in node you just added, fill in your twitter handle and a keyword where will be searched on. ( this node is only reading, not posting anything)
-Then add the tone analyser node and wire it to twitter node
-No configuration needed as this time
-Add 2 function nodes
-Wire the first to the tone analyser node and wire the second tot the first function node
-Because tone analyser will give five different tones and we use only one. This first function node will give the tone with the highest score. 
-Give the first node the name: Find top tone score” and add this code to the first node:
+
+3. We start with a **twitter in** node, drag and drop it to the canvas.
+3. Double click the twitter in node you just added, fill in your twitter handle and a keyword. This keyword will be searched on. (this node is only reading, not posting anything)
+3. Then add the tone analyser node and wire it to twitter node
+ No configuration needed as this time
+3. Add 2 function nodes
+3. Wire the first to the tone analyser node and wire the second tot the first function node
+ Because tone analyser will give five different tones and we use only one. This first function node will give the tone with the highest score. 
+3. Give the first node the name: Find top tone score” and add this code to the first node:
 
 ```
 if(msg.response.document_tone) {
