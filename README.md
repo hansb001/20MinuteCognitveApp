@@ -25,42 +25,43 @@ You need a Bluemix account, if you don't have one yet, follow the steps to can c
 
 When you are logged in to Bluemix:
 
-1. click to 'Catalog' 
-1. click on “Apps”
-1. click on “Boilerplates”
-1. click on the 'Node-RED starter'. 
+1. Click to 'Catalog' 
+1. Click on “Apps”
+1. Click on “Boilerplates”
+1. Click on the 'Node-RED starter'. 
  On the next screen you must give the application unique name, which wil be part of the URL to the application. 
 1. Then click 'Create'. 
 
-Right now the Node-RED application is being created and deployed. This will take a few minutes. 
+Right now the Node-RED application is being created and deployed. This will take a few minutes. The application consists of a Node-JS runtime and a Cloudant NoSQL database.
 
 ## Step two: Add Watson Tone Analyzer service
 
-When the application is started, click on connections in the left menu
+When the application is started, click on 'Connections' in the left menu
 
-2. Click connect new
-2. Click on Watson (on the left)
-2. Click tone analyzer
-2. Click create
+2. Click 'Connect new'
+2. Click on 'Watson' (on the left)
+2. Click Tone Analyzer'
+2. Click 'Create'
  Now the tone analyser service is being added to the application, so that we can use it in Node-RED.
-2. Click restage
+2. Click 'Restage'
  The application will be restarted
 
-When finished click on the **View app** which opens up your Node-RED application.
+When finished click on the URL which opens up your Node-RED application. Then click on 'Go to your Node-RED flow editor'
 
 ## Step three: Build your application
 
-Now it is time to build your application by dragging dropping nodes to the canvas.
+Now it is time to build your application by dragging and dropping nodes to the canvas.
+On the left side of the screen you see the nodes.
 Every node has it’s own functionality and parameters.
 
 3. We start with a **twitter in** node, drag and drop it to the canvas.
-3. Double click the twitter in node you just added, fill in your twitter handle and a keyword. This keyword will be searched on. (this node is only reading, not posting anything)
-3. Then add the tone analyser node and wire it to twitter node
+3. Double click the twitter in node you just added, fill in your twitter handle (by clicking the pencil icon) and a keyword. This keyword will be searched on. (this node is only reading, not posting anything)
+3. Then add the **Tone Analyzer V3** node and wire it to twitter node
  No configuration needed as this time
-3. Add 2 function nodes
-3. Wire the first to the tone analyser node and wire the second tot the first function node
- Because tone analyser will give five different tones and we use only one. This first function node will give the tone with the highest score. 
-3. Give the first node a name, for instance: Find top tone score and add the following code to the first node:
+3. Add 2 Function nodes
+3. Wire the first to the Tone Analyzer node and wire the second tot the first Function node
+ We use a simple function because Tone AnalyZer will give five different tones and we will use only one. This first function node will extract the  tone with the highest score. 
+3. Give the first node a name( by double clicking on the node), for instance: 'Find top tone score' and add the following code to the first node:
 
 ```
 if(msg.response.document_tone) {
@@ -85,7 +86,7 @@ if(msg.response.document_tone) {
 ```
 Tone analyzer will give results for more then one category. We will only use the top tone score. The code above will derive the top tone score. the code below will send the top tone score to the payload.
 
-3. give the second node a name, for instance: Combine tweet and tone and add the following code:
+3. give the second node a name, for instance: 'Combine tweet and tone' and add the following code:
 ```
 msg.payload = {
  tweet: msg.tweet, 
@@ -98,17 +99,19 @@ return msg;
 
 You just build your first application!.
 
-To save and deploy the flow you just build to Bluemix, click on the **deploy** button. 
+To save and deploy the flow you just build to Bluemix, click on the 'Deploy' button. 
 
 Next step is to display the results of the twitter analysis. 
 
 ## Step four: Add dashboard nodes 
 
-First check if if the dashboard nodes are available. To do so, scroll down in the nodes palette, on the left side of the screen. If there is a section called **dashboard** you can continue to the step five. Otherwise follow the follwoing to install the dashboard nodes.
+First check if if the dashboard nodes are available. To do so, scroll down in the nodes palette, on the left side of the screen. If there is a section called **Dashboard** you can continue to the step five. Otherwise follow the follwoing steps to install the dashboard nodes.
 
-4. Go to the top right ‘hamburger menu’ then click on ‘manage palette’, click on install
-4. And search for node-red-dashboard
-4. And then click install
+4. Go to the top right ‘hamburger menu’ then click on ‘Manage palette’, then
+4. Click on the 'Install-tab'
+4. Search for 'node-red-dashboard'
+4. When found, click 'Install' and on 'Install' on the pop-up screen.
+4. Then click 'Done'
 
 When the installation finished you should see the nodes in the nodes palette
 
@@ -116,23 +119,30 @@ When the installation finished you should see the nodes in the nodes palette
 
 on the dashboard we will show the tweet and the highest tone score
 
-5. Add two text nodes fromm the dashboard section of the palette
-5. Wire both to the second function nodes you just created.
-5. Open the first text node, by double clicking.
-5. Create a group where both dashboard nodes will be part of, by clicking on the pencil icon. In the next screen type in a name, then ok
- You can name this node “tweet” because this node will display the tweet on the dashboard
-The value format is : ```{{msg.payload.tweet.text}}```
+5. Got to the Dashboad section of the palette and add two Text nodes 
+5. Wire both to the second Function node you created earlier
+5. Open the first Text node, by double clicking.
+5. Create a group where both dashboard nodes will be part of, by clicking on the pencil icon. 
+5. Then create a new 'ui-tab' by clicking on the pencil icon. in the next screen leave everything default and click 'Add' 
+5. You can name this node “tweet” because this node will display the tweet on the dashboard. You can fill this in the name in the "label' field
+5. You need also to add the value format, this is the extacted text of the tweet
+ The value format is : ```{{msg.payload.tweet.text}}```
 
-5. The second node will contain the tone score of the tweet. As a group, use the name of the group you created earlier, label can be Tone score and the value format: {{msg.toptone}}
+5. The second node will contain the tone score of the tweet. As a group, use the name of the group you created earlier, label can be 'Tone score' and the value format: {{msg.toptone}}
+
+5. Then click 'Deploy'
 
 To see the results use your URL with ```/ui``` for instance: https://Watsonlab.mybluemix.net/ui 
+When a new tweet is analyzed, you wil see it appear on the Dashboard, with the corresponding Tone Score.
+
+Maybe the lay-out can be better, but you can change that later.
 
 Then you are finished and have your cognitive application running including the dashboard! 
 
 
 ## Step 6 (optional): Extend your application
 
-If you got time you can extend the application. In the sample flow below, I have added a filter, to only analyze tweets in English, and a delay node to anlayze less messages per minute.
+If you got time you can extend the application. In the sample flow below, I have added a filter, to only analyze tweets in English, and a delay node to analyze less messages per minute.
 
 To get a better layout, you can change parameters of the dashboard nodes or on the right side of the screen, there will be an extra tab called dashboard.
 
