@@ -162,3 +162,5 @@ Then you got the complete flow, the only thing you have to change is the twitter
 ##Wrap up##
 
 In this 20 minute workshop you got hopefully an idea on how to write a cognitive app with just little effort. This is surely not a complete application, but you can use this as a starting point to build a more advanced application, maybe in combination with other data sources and Watson services.
+
+Please make sure you stop the app, tone analyzer will continue working and will take a lot of your resources especially when you have a paid account!
