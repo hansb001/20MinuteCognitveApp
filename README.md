@@ -19,6 +19,8 @@ As already mentioned this is just a starter application to show you how easy it 
 
 In step six you will find the complete flow of this lab.
 
+Please make sure you stop the app after this lab., tone analyzer will continue working and will take a lot of your resources especially when you have a paid account!
+
 ## Step one: Deploy Node-RED on Bluemix
 
 You need a Bluemix account, if you don't have one yet, follow the steps to can create an account [here](http://Bluemix.net). 
